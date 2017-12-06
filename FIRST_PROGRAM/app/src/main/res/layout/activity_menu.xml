@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="l.generationz.first_program.menu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/a81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backmap"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/quests1"
+            android:layout_below="@+id/backquests"
+            android:layout_marginTop="31dp"
+            app:srcCompat="@drawable/img_backgr"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="430dp" />
+
+        <ImageButton
+            android:id="@+id/quests1"
+            android:layout_width="313dp"
+            android:layout_height="125dp"
+            android:layout_alignTop="@+id/backmap"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/img_quests"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="431dp" />
+
+        <ImageView
+            android:id="@+id/backquests"
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            app:srcCompat="@drawable/img_backgr"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <ImageButton
+            android:id="@+id/map2"
+            android:layout_width="313dp"
+            android:layout_height="125dp"
+            android:layout_alignTop="@+id/backquests"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/img_map"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="51dp" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
