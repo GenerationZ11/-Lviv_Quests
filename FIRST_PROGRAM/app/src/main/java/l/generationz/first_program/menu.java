@@ -25,7 +25,11 @@ public class menu extends AppCompatActivity {
         qusets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(menu.this, Quests.class));
+                Intent intent = new  Intent(menu.this, QuestsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("questname", "Visit Ratusha");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
