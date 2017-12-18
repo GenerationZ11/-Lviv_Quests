@@ -1,6 +1,7 @@
 package l.generationz.first_program;
 
 import android.content.Intent;
+import android.opengl.GLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,17 +9,26 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class Quests extends AppCompatActivity {
 
     TextView nameView;
     TextView descriptionView;
+
 
 
     @Override
@@ -32,35 +42,11 @@ public class Quests extends AppCompatActivity {
                 startActivity(new Intent(Quests. this, Map.class));
             }
         });
+
+
+
         nameView = findViewById(R.id.infa_about_quest);
         descriptionView = findViewById(R.id.descr);
-
-
-        InputStream is = this.getResources().openRawResource(R.raw.desc);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-
-        if (is != null) {
-            String data = "";
-            String json= "";
-            try {
-                while ((data = reader.readLine()) != null) {
-                    json+=data;
-                }
-                is.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            try{
-                JSONArray array = new JSONArray(json);
-                JSONObject object = array.getJSONObject(0);
-                String name = object.getString("name");
-                String descript = object.getString("description");
-                nameView.setText(name);
-                descriptionView.setText(descript);
-            }catch(Exception e){
-
-            }
-        }
-
     }
+
 }

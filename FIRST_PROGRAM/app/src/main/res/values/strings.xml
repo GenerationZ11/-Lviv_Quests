@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FIRST_PROGRAM</string>
     <string name="title_activity_map">Map</string>
+    <string name="entr">Увійти</string>
+    <string name="facebook_app_id">276443716219016</string>
+    <string name="fb_login_protocol_scheme">fb276443716219016</string>
+    <string name="FB">Увійти через Facebook</string>
 </resources>
