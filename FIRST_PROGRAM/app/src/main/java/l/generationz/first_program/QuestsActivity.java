@@ -140,10 +140,10 @@ public class QuestsActivity extends AppCompatActivity {
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference();
-                    myRef.child("feed").child(id).child("name").setValue(questNameView.getText().toString());
-                    myRef.child("feed").child(id).child("image").setValue(id + ".jpg");
-                    myRef.child("feed").child(id).child("likes").setValue(0);
-                    myRef.child("feed").child(id).child("date").setValue(new Date().getTime());
+                    myRef.child("Feed").child(id).child("name").setValue(questNameView.getText().toString());
+                    myRef.child("Feed").child(id).child("image").setValue(id + ".jpg");
+                    myRef.child("Feed").child(id).child("likes").setValue(0);
+                    myRef.child("Feed").child(id).child("date").setValue(new Date().getTime());
 
                 }
             });
