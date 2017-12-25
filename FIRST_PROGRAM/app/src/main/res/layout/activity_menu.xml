@@ -35,9 +35,6 @@
             tools:layout_editor_absoluteY="431dp" />
 
         <ImageButton
-<<<<<<< HEAD
-            android:id="@+id/menuquests"
-=======
             android:id="@+id/feed"
             android:layout_width="313dp"
             android:layout_height="125dp"
@@ -50,7 +47,6 @@
 
         <ImageButton
             android:id="@+id/quests"
->>>>>>> 9af6873c0fced1649de7d1006aa1c98035f4376b
             android:layout_width="313dp"
             android:layout_height="125dp"
             android:layout_alignStart="@+id/backquests"
