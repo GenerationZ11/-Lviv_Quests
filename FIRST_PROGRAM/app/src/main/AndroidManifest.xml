@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogInFB" />
-        <activity android:name=".Feed"></activity>
+        <activity android:name=".Feed" />
     </application>
 
 </manifest>
