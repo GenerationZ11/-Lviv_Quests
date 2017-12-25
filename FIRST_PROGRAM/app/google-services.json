@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "911017855581",
+    "firebase_url": "https://lvivquestz.firebaseio.com",
+    "project_id": "lvivquestz",
+    "storage_bucket": "lvivquestz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911017855581:android:a24b5f04ad636a5e",
+        "android_client_info": {
+          "package_name": "l.generationz.first_program"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911017855581-5q39cun3fnc8g5nliaqrh5m6k0vsrgr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "l.generationz.first_program",
+            "certificate_hash": "d94557e9da8b63adaa69539626c9c2f7a2e0471c"
+          }
+        },
+        {
+          "client_id": "911017855581-h4vr729a4fp6u0qq4iuso9r82g4ck86i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "l.generationz.first_program",
+            "certificate_hash": "d5825f0262ede8c655e87e066b8f83bd7108c815"
+          }
+        },
+        {
+          "client_id": "911017855581-niojv1ssgg1chi98eft0pm7b9c1ga3v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD130hOMXldIu8JmBPk1HeH2NZGoclej1s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911017855581-niojv1ssgg1chi98eft0pm7b9c1ga3v5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
