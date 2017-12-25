@@ -17,9 +17,9 @@
             android:id="@+id/backmap"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/FB"
             android:layout_below="@+id/backquests"
-            android:layout_marginTop="31dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
             app:srcCompat="@drawable/img_backgr"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="430dp" />
@@ -37,11 +37,11 @@
             tools:layout_editor_absoluteY="431dp" />
 
         <ImageButton
-            android:id="@+id/quests"
+            android:id="@+id/menuquests"
             android:layout_width="313dp"
             android:layout_height="125dp"
+            android:layout_alignStart="@+id/backquests"
             android:layout_alignTop="@+id/backmap"
-            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/img_quests"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="431dp" />

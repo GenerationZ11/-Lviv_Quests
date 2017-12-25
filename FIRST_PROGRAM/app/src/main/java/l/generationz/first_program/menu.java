@@ -14,7 +14,7 @@ public class menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        ImageButton qusets=(ImageButton) findViewById(R.id.quests);
+        final ImageButton menuquesets=(ImageButton) findViewById(R.id.menuquests);
         ImageButton map=(ImageButton) findViewById(R.id.map2);
         ImageButton FB = (ImageButton) findViewById(R.id.FB);
         map.setOnClickListener(new View.OnClickListener() {
@@ -23,14 +23,10 @@ public class menu extends AppCompatActivity {
                 startActivity(new Intent(menu.this,Map.class));
             }
         });
-        qusets.setOnClickListener(new View.OnClickListener() {
+        menuquesets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new  Intent(menu.this, QuestsActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("questname", "Pid zolotou rozou");
-                intent.putExtras(bundle);
-                startActivity(intent);
+                startActivity(new Intent(menu.this,MenuQuestsActivity.class));
             }
         });
         FB.setOnClickListener(new View.OnClickListener() {
