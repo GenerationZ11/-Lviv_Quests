@@ -14,6 +14,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:layout_width="313dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/feed"
+            android:layout_alignTop="@+id/feed"
+            app:srcCompat="@drawable/img_backgr"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="430dp" />
+        <ImageView
             android:id="@+id/backmap"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
@@ -21,20 +29,20 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="34dp"
             app:srcCompat="@drawable/img_backgr"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="51dp" />
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="430dp" />
 
 
         <ImageButton
             android:id="@+id/feed"
             android:layout_width="313dp"
             android:layout_height="125dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/backmap"
-            android:layout_below="@+id/backmap"
-            android:layout_marginTop="26dp"
-            android:background="?attr/colorAccent"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="51dp" />
+            android:layout_marginBottom="25dp"
+            app:srcCompat="@drawable/imggg"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="431dp" />
 
         <ImageButton
             android:id="@+id/quests"
@@ -43,17 +51,16 @@
             android:layout_alignStart="@+id/backquests"
             android:layout_alignTop="@+id/backmap"
             app:srcCompat="@drawable/img_quests"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="51dp" />
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="431dp" />
 
         <ImageView
             android:id="@+id/backquests"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
 
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/map2"
-            android:layout_marginTop="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
             app:srcCompat="@drawable/img_backgr"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="51dp" />

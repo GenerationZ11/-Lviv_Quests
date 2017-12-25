@@ -40,11 +40,13 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
 
         // Add a marker  and move the camera
         LatLng Soft = new LatLng(49.8225978,23.9814484);
-        LatLng Opera = new LatLng(49.8440167,24.0240236);
+       LatLng Opera = new LatLng(49.8440167,24.0240236);
         LatLng Gid = new LatLng(49.841133,24.034515);
-        mMap.addMarker(new MarkerOptions().position(Gid).title("макс лох"));
-        mMap.addMarker(new MarkerOptions().position(Opera).title("Marker in Opera"));
-        mMap.addMarker(new MarkerOptions().position(Soft).title("Marker in Soft"));
+        LatLng Hight = new LatLng(49.848224699999996,24.039509503704835);
+        mMap.addMarker(new MarkerOptions().position(Hight).title("Найвища точка міста"));
+        mMap.addMarker(new MarkerOptions().position(Gid).title("Жидівська кнайпа"));
+      //  mMap.addMarker(new MarkerOptions().position(Opera).title("Сидяча статуя С"));
+        mMap.addMarker(new MarkerOptions().position(Soft).title("SoftServe"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Opera,13));
 
 
