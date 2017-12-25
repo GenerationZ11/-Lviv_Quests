@@ -41,7 +41,7 @@
 
                     <ImageButton
                         android:id="@+id/quests1"
-                        android:src="@drawable/pidor"
+                        app:srcCompat="@drawable/pidor2"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:src="@drawable/realnolubazaebal"
+                        app:srcCompat="@drawable/realnolubazaebal1"
                         android:id="@+id/quests2"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/sukablyat" />
+                        app:srcCompat="@drawable/sukablyat1" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -130,7 +130,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/lubazaebal" />
+                    app:srcCompat="@drawable/lubazaebal1"
+                    />
             </android.support.v7.widget.CardView>
 
 

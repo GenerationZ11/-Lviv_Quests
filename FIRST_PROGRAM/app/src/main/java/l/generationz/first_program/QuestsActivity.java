@@ -3,16 +3,20 @@ package l.generationz.first_program;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.nfc.Tag;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -43,6 +47,7 @@ public class QuestsActivity extends AppCompatActivity {
     private String currentQuest = null;
     private TextView questNameView;
     private TextView questDescriptionView;
+    private  static  final String TAG = "me Logs";
 
     private TextView questTaskView;
     private ImageView questImage;
@@ -53,31 +58,63 @@ public class QuestsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quests);
 
+        Log.d(TAG, "найдем View-елементи");
         questNameView = findViewById(R.id.quest_name);
         questDescriptionView = findViewById(R.id.quest_description);
         questTaskView = findViewById(R.id.quest_task);
-        questImage = findViewById(R.id.quest_image );
+        questImage = findViewById(R.id.quest_image);
+
         btnCamera = findViewById(R.id.btnCamera);
-        ImageButton map=(ImageButton) findViewById(R.id.map2);
+        ImageButton map = (ImageButton) findViewById(R.id.map2);
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(QuestsActivity.this,Map.class));
+                startActivity(new Intent(QuestsActivity.this, Map.class));
             }
         });
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             currentQuest = bundle.getString("questname");
 
+
         }
         if (currentQuest != null) {
             initLoadFromDbBtn();
-            btnCamera.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    OpenCamera();
-                }
-            });
+            if (currentQuest.equalsIgnoreCase("Statuya Svobody"))
+                btnCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(QuestsActivity.this, "Вибачте, ви не в зоні виконання квесту", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER,0,0);
+                        toast.show();
+                    }
+                });
+            if (currentQuest.equalsIgnoreCase("Pid zolotou rozou"))
+                btnCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(QuestsActivity.this, "Вибачте, ви не в зоні виконання квесту", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER,0,0);
+                        toast.show();
+                    }
+                });
+            if (currentQuest.equalsIgnoreCase("Vysokyi Zamok"))
+                btnCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(QuestsActivity.this, "Вибачте, ви не в зоні виконання квесту", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER,0,0);
+                        toast.show();
+                    }
+                });
+
+            if (currentQuest.equalsIgnoreCase("Visit SoftServe"))
+                btnCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        OpenCamera();
+                    }
+                });
         }
 
 
@@ -95,7 +132,7 @@ public class QuestsActivity extends AppCompatActivity {
                         QuestDetails quest = singleSnapshot.getValue(QuestDetails.class);
                         questNameView.setText(quest.getName());
                         questDescriptionView.setText(quest.getDescription());
-                        questTaskView.setText(quest.getTask() );
+                        questTaskView.setText(quest.getTask());
                         loadImageByName(quest.getImage());
                     }
 
@@ -158,12 +195,13 @@ public class QuestsActivity extends AppCompatActivity {
             });
         }
     }
+
     private void loadImageByName(String name) {
 
 
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         StorageReference storageRef = firebaseStorage.getReference();
-        StorageReference pathReference = storageRef.child("Quests/"+name);
+        StorageReference pathReference = storageRef.child("Quests/" + name);
 
         final long ONE_MEGABYTE = 1024 * 1024;
         pathReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
