@@ -17,7 +17,7 @@
             android:id="@+id/backmap"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/quests1"
+            android:layout_alignStart="@+id/FB"
             android:layout_below="@+id/backquests"
             android:layout_marginTop="31dp"
             app:srcCompat="@drawable/img_backgr"
@@ -25,7 +25,19 @@
             tools:layout_editor_absoluteY="430dp" />
 
         <ImageButton
-            android:id="@+id/quests1"
+            android:id="@+id/FB"
+            android:layout_width="313dp"
+            android:layout_height="125dp"
+            android:layout_alignStart="@+id/quests"
+            android:layout_below="@+id/backmap"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="25dp"
+            app:srcCompat="@color/colorPrimaryDark"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="431dp" />
+
+        <ImageButton
+            android:id="@+id/quests"
             android:layout_width="313dp"
             android:layout_height="125dp"
             android:layout_alignTop="@+id/backmap"
@@ -54,5 +66,6 @@
             app:srcCompat="@drawable/img_map"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="51dp" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
