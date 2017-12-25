@@ -44,9 +44,4 @@ dependencies {
     implementation 'com.android.support:design:26.0.2'
 }
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 9af6873c0fced1649de7d1006aa1c98035f4376b
 apply plugin: 'com.google.gms.google-services'
