@@ -14,7 +14,7 @@ public class menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        ImageButton qusets=(ImageButton) findViewById(R.id.FB);
+        ImageButton qusets=(ImageButton) findViewById(R.id.quests);
         ImageButton map=(ImageButton) findViewById(R.id.map2);
         ImageButton FB = (ImageButton) findViewById(R.id.FB);
         map.setOnClickListener(new View.OnClickListener() {
