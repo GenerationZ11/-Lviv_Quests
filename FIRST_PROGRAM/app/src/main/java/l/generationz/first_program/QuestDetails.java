@@ -8,6 +8,8 @@ public class QuestDetails {
     private String name;
     private String description;
     private String image;
+    private String task;
+
 
     public String getImage() {
         return image;
@@ -24,6 +26,10 @@ public class QuestDetails {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getTask (){return task;}
+
+    public void setTask (String task){this.task = task;}
 
     public String getName() {
         return name;

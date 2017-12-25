@@ -28,7 +28,7 @@ public class menu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new  Intent(menu.this, QuestsActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("questname", "Visit Ratusha");
+                bundle.putString("questname", "Pid zolotou rozou");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

@@ -2,6 +2,7 @@ package l.generationz.first_program;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView;
 
@@ -41,6 +43,9 @@ public class QuestsActivity extends AppCompatActivity {
     private String currentQuest = null;
     private TextView questNameView;
     private TextView questDescriptionView;
+
+    private TextView questTaskView;
+    private ImageView questImage;
     private ImageButton btnCamera;
 
     @Override
@@ -50,6 +55,8 @@ public class QuestsActivity extends AppCompatActivity {
 
         questNameView = findViewById(R.id.quest_name);
         questDescriptionView = findViewById(R.id.quest_description);
+        questTaskView = findViewById(R.id.quest_task);
+        questImage = findViewById(R.id.quest_image );
         btnCamera = findViewById(R.id.btnCamera);
 
         Bundle bundle = getIntent().getExtras();
@@ -71,8 +78,6 @@ public class QuestsActivity extends AppCompatActivity {
     }
 
     private void initLoadFromDbBtn() {
-
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Quests/");
         Query phoneQuery = myRef.orderByKey();
@@ -84,8 +89,9 @@ public class QuestsActivity extends AppCompatActivity {
                         QuestDetails quest = singleSnapshot.getValue(QuestDetails.class);
                         questNameView.setText(quest.getName());
                         questDescriptionView.setText(quest.getDescription());
+                        questTaskView.setText(quest.getTask() );
+                        loadImageByName(quest.getImage());
                     }
-
 
                 }
 
@@ -96,13 +102,10 @@ public class QuestsActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     private void OpenCamera() {
         dispatchTakePictureIntent();
-
     }
 
     private void dispatchTakePictureIntent() {
@@ -148,5 +151,29 @@ public class QuestsActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+    private void loadImageByName(String name) {
+
+
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageRef = firebaseStorage.getReference();
+        StorageReference pathReference = storageRef.child("Quests/"+name);
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        pathReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                if (bytes.length > 0) {
+                    Bitmap myBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    questImage.setImageBitmap(myBitmap);
+
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
     }
 }
