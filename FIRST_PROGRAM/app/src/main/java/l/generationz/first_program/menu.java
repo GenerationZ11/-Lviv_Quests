@@ -17,7 +17,7 @@ public class menu extends AppCompatActivity {
 
         ImageButton qusets=(ImageButton) findViewById(R.id.quests);
         ImageButton map=(ImageButton) findViewById(R.id.map2);
-        ImageButton FB = (ImageButton) findViewById(R.id.FB);
+
         ImageButton feed = (ImageButton) findViewById(R.id.feed);
 
         map.setOnClickListener(new View.OnClickListener() {
@@ -32,12 +32,7 @@ public class menu extends AppCompatActivity {
                 startActivity(new Intent(menu.this,MenuQuestsActivity.class));
             }
         });
-        FB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(menu.this , LogInFB.class));
-            }
-        });
+
         feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

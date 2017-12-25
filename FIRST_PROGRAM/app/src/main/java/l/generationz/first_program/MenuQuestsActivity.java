@@ -23,7 +23,7 @@ public class MenuQuestsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent(MenuQuestsActivity.this, QuestsActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("questname", "Visit Ratusha");
+                bundle.putString("questname", "Vysokyi Zamok");
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

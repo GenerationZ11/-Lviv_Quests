@@ -15,7 +15,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LvivQuests.getInstance();
+        ImageButton FB = (ImageButton) findViewById(R.id.FB);
         ImageButton start= (ImageButton) findViewById(R.id.Start1);
+        FB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this , LogInFB.class));
+            }
+        });
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
