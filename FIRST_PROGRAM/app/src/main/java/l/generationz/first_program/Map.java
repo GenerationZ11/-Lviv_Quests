@@ -39,10 +39,13 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker  and move the camera
-        LatLng lviv = new LatLng(49.8326046, 23.8721529);
-        mMap.addMarker(new MarkerOptions().position(lviv).title("Marker in Lviv"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(lviv));
-
+        LatLng Soft = new LatLng(49.8225978,23.9814484);
+        LatLng Opera = new LatLng(49.8440167,24.0240236);
+        LatLng Gid = new LatLng(49.841133,24.034515);
+        mMap.addMarker(new MarkerOptions().position(Gid).title("макс лох"));
+        mMap.addMarker(new MarkerOptions().position(Opera).title("Marker in Opera"));
+        mMap.addMarker(new MarkerOptions().position(Soft).title("Marker in Soft"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Opera,13));
 
 
     }

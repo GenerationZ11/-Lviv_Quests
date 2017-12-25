@@ -58,7 +58,13 @@ public class QuestsActivity extends AppCompatActivity {
         questTaskView = findViewById(R.id.quest_task);
         questImage = findViewById(R.id.quest_image );
         btnCamera = findViewById(R.id.btnCamera);
-
+        ImageButton map=(ImageButton) findViewById(R.id.map2);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(QuestsActivity.this,Map.class));
+            }
+        });
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             currentQuest = bundle.getString("questname");
