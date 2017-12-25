@@ -43,6 +43,10 @@ public class LvivQuests {
         return instance;
     }
 
+    public static void setInstance(LvivQuests instance) {
+        LvivQuests.instance = instance;
+    }
+
     public List<QuestDetails> getQuests() {
         return quests;
     }
@@ -51,14 +55,24 @@ public class LvivQuests {
         this.quests = quests;
     }
 
+    public HashMap<String, Bitmap> getImages() {
+        return images;
+    }
 
+    public void setImages(HashMap<String, Bitmap> images) {
+        this.images = images;
+    }
 
-    public List<String> getfinished_quests() {
+    public List<String> getFinished_quests() {
         return finished_quests;
     }
 
     public void setFinished_quests(List<String> finished_quests) {
         this.finished_quests = finished_quests;
+    }
+
+    public List<String> getfinished_quests() {
+        return finished_quests;
     }
 
     public List<String> getLikes_feed() {
