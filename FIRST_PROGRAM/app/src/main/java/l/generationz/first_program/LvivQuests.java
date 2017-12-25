@@ -25,7 +25,7 @@ import java.util.List;
 
 public class LvivQuests {
     private static LvivQuests instance;
-    private List<QuestDetails> quests = new ArrayList<QuestDetails>();
+    private HashMap<String,QuestDetails> quests = new HashMap<String, QuestDetails>();
     private HashMap<String, Bitmap> images = new HashMap<String, Bitmap>();
     private List<String> finished_quests = new ArrayList<String>();
     private List<String> likes_feed = new ArrayList<String>();
@@ -47,11 +47,11 @@ public class LvivQuests {
         LvivQuests.instance = instance;
     }
 
-    public List<QuestDetails> getQuests() {
+    public HashMap<String, QuestDetails> getQuests() {
         return quests;
     }
 
-    public void setQuests(List<QuestDetails> quests) {
+    public void setQuests(HashMap<String, QuestDetails> quests) {
         this.quests = quests;
     }
 
@@ -100,7 +100,7 @@ public class LvivQuests {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
                     QuestDetails quest = singleSnapshot.getValue(QuestDetails.class);
-                    quests.add(quest);
+                    quests.put(singleSnapshot.getKey(), quest);
                     loadImageByName(quest.getImage());
                 }
             }
