@@ -21,13 +21,13 @@
             app:srcCompat="@drawable/img_backgr"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="430dp" />
+
         <ImageView
             android:id="@+id/backmap"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/backquests"
+            android:layout_alignTop="@+id/quests"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
             app:srcCompat="@drawable/img_backgr"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="430dp" />
@@ -37,9 +37,9 @@
             android:id="@+id/feed"
             android:layout_width="313dp"
             android:layout_height="125dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/backmap"
-            android:layout_marginBottom="25dp"
+            android:layout_below="@+id/backmap"
+            android:layout_marginTop="62dp"
             app:srcCompat="@drawable/imggg"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="431dp" />
@@ -48,8 +48,9 @@
             android:id="@+id/quests"
             android:layout_width="313dp"
             android:layout_height="125dp"
-            android:layout_alignStart="@+id/backquests"
-            android:layout_alignTop="@+id/backmap"
+            android:layout_below="@+id/backquests"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="62dp"
             app:srcCompat="@drawable/img_quests"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="431dp" />
@@ -59,8 +60,8 @@
             android:layout_width="313dp"
             android:layout_height="wrap_content"
 
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
+            android:layout_alignStart="@+id/backmap"
+            android:layout_alignTop="@+id/map2"
             app:srcCompat="@drawable/img_backgr"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="51dp" />
@@ -69,8 +70,9 @@
             android:id="@+id/map2"
             android:layout_width="313dp"
             android:layout_height="125dp"
-            android:layout_alignTop="@+id/backquests"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/backquests"
+            android:layout_marginTop="23dp"
             app:srcCompat="@drawable/img_map"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="51dp" />
