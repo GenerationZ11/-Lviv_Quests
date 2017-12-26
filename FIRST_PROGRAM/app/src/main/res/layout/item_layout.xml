@@ -31,16 +31,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="313dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="28dp"
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        style="@style/toggleButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:text="Button"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_toggle_bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feedImage" />
+
 </android.support.constraint.ConstraintLayout>
