@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -17,10 +19,16 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.login.widget.ProfilePictureView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -33,7 +41,7 @@ import l.generationz.first_program.R;
 public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private AccessTokenTracker accessTokenTracker;
-    private AccessToken accessToken ;
+    private AccessToken accessToken;
     private final static String TAG = LoginActivity.class.getName().toString();
 
 
@@ -41,10 +49,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Initialize FB SDK
-        //This line must be put here before the  setContentView(R.layout.activity_login);
-        //Or else you will get null object error
         FacebookSdk.sdkInitialize(getApplicationContext(), new FacebookSdk.InitializeCallback() {
+
             @Override
             public void onInitialized() {
                 //AccessToken is for us to check whether we have previously logged in into
@@ -54,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d(TAG, "not log in yet");
                 } else {
                     Log.d(TAG, "Logged in");
-                    Intent main = new Intent(LoginActivity.this,MainActivity.class);
+                    Intent main = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(main);
 
                 }
@@ -62,9 +68,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         setContentView(R.layout.activity_test__fb);
-                callbackManager = CallbackManager.Factory.create();
+        callbackManager = CallbackManager.Factory.create();
 
-        //register access token to check whether user logged in before
         accessTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldToken, AccessToken newToken) {
@@ -72,14 +77,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
-        // Callback registration
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //Once authorized from facebook will directly go to MainActivity
+
                 accessToken = loginResult.getAccessToken();
-                Intent main = new Intent(LoginActivity.this,MainActivity.class);
+                Intent main = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(main);
 
             }
@@ -96,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //Set permission to use in this app
-        List<String> permissionNeeds = Arrays.asList("user_friends","email","user_birthday");
+        List<String> permissionNeeds = Arrays.asList("public_profile", "user_friends", "email", "user_birthday");
         loginButton.setReadPermissions(permissionNeeds);
 
         accessTokenTracker.startTracking();
@@ -139,5 +144,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onStop();
         accessTokenTracker.stopTracking();
     }
+
 
 }

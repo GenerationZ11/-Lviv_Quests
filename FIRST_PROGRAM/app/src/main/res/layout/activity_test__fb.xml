@@ -5,26 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="l.generationz.first_program.test_FB">
-    <RelativeLayout android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="276dp"
-        android:text="Photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="387dp"
+        android:layout_height="493dp"
 
-        >
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="0dp"
@@ -32,62 +24,36 @@
 
             >
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="150dp"
-                android:id="@+id/imgPhoto"
-                android:scaleType="fitCenter"
-                android:layout_weight="1"
-                android:background="#86a9f3" />
         </TableRow>
 
 
         <TableRow
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            >
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView3"
-                android:src="@drawable/people"
-                android:scaleType="center" />
+            android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/txtName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtName"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Name"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:text="Ім'я Прізвище:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
-
 
 
         <TableRow
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-           >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:src="@drawable/shapes"
-                android:layout_below="@+id/txtName"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Gender"
                 android:id="@+id/txtGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageView2"
+                android:layout_toEndOf="@+id/imageView2"
                 android:layout_toRightOf="@+id/imageView2"
-                android:layout_toEndOf="@+id/imageView2" />
+                android:text="Cтать:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </TableRow>
 
@@ -95,60 +61,34 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
 
-          >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView5"
-                android:src="@drawable/sweet" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Birthday"
-                android:id="@+id/txtBd" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             >
 
-            <ImageView
+            <TextView
+                android:id="@+id/txtBd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:layout_below="@+id/txtGender"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/social" />
+                android:text="День народження:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="URL"
-                android:id="@+id/txtURL"
                 android:layout_alignTop="@+id/imageView"
+                android:layout_toEndOf="@+id/imageView"
                 android:layout_toRightOf="@+id/imageView"
-                android:layout_toEndOf="@+id/imageView" />
+                android:text="Емейл:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <com.facebook.share.widget.ShareButton
-                android:id="@+id/fb_share_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"   />
-
-            <com.facebook.share.widget.LikeView
-                android:id="@+id/likeView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
         </TableRow>
 
@@ -160,15 +100,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnShareInst"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:text="insta" />
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:text="Share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.facebook.share.widget.ShareButton
+        android:id="@+id/fb_share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Post in FB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/photo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.facebook.login.widget.ProfilePictureView>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="182dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <![CDATA[
     RelativeLayout>
+]]>
 </android.support.constraint.ConstraintLayout>
