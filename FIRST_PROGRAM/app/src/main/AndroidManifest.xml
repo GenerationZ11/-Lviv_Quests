@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,6 +25,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".menu" />
         <activity android:name=".QuestsActivity" />
@@ -45,6 +48,12 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <provider android:authorities="com.facebook.app.FacebookContentProvider{@string/facebook_app_id}"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -53,6 +62,7 @@
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -63,8 +73,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogInFB" />
-        <activity android:name=".MenuQuestsActivity"></activity>
+        <activity android:name=".MenuQuestsActivity" />
         <activity android:name=".Feed" />
+        <activity android:name=".test_FB"></activity>
+
     </application>
 
 </manifest>

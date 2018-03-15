@@ -1,12 +1,18 @@
 package l.generationz.first_program;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -24,9 +30,13 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class MainActivity extends AppCompatActivity {
     private CallbackManager mCallbackManager;
     private FirebaseAuth mAuth;
+    private Button test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +44,22 @@ public class MainActivity extends AppCompatActivity {
         mCallbackManager = CallbackManager.Factory.create();
         mAuth = FirebaseAuth.getInstance();
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        test = findViewById(R.id.test);
         loginButton.setReadPermissions("email");
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "l.generationz.first_program",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
 
+        } catch (NoSuchAlgorithmException e) {
+
+        }
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -57,14 +81,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         LvivQuests.getInstance();
-      //  ImageButton FB = (ImageButton) findViewById(R.id.FB);
+
+      test.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              startActivity(new Intent(MainActivity.this,test_FB.class));
+          }
+      });
         ImageButton start= (ImageButton) findViewById(R.id.Start1);
-     //   FB.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-         //   public void onClick(View view) {
-           //     startActivity(new Intent(MainActivity.this , LogInFB.class));
-        //    }
-        //});
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
