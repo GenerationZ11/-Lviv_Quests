@@ -11,9 +11,10 @@
         android:layout_height="wrap_content" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="387dp"
-        android:layout_height="493dp"
 
+        android:layout_height="493dp"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="Ім'я Прізвище:"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20sp" />
         </TableRow>
 
 
@@ -106,11 +108,12 @@
 
     <Button
         android:id="@+id/share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="8dp"
         android:text="Share"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -121,6 +124,7 @@
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
         android:text="Post in FB"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -146,7 +150,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <![CDATA[
-    RelativeLayout>
-]]>
+
+    <ImageButton
+        android:id="@+id/like"
+        android:layout_width="139dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="68dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@color/cardview_dark_background" />
+
+    <EditText
+        android:id="@+id/likesAmount"
+        android:layout_width="37dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintStart_toEndOf="@+id/like" />
+
 </android.support.constraint.ConstraintLayout>

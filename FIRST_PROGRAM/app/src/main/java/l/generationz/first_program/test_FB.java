@@ -1,9 +1,8 @@
 package l.generationz.first_program;
-;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-
+import android.graphics.Color;
 import android.graphics.Path;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -13,36 +12,32 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.login.widget.ProfilePictureView;
 import com.facebook.share.Sharer;
-
 import com.facebook.share.model.ShareHashtag;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
-
 import com.facebook.share.widget.LikeView;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 import com.squareup.picasso.Picasso;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -57,6 +52,10 @@ public class test_FB extends AppCompatActivity {
     TextView email, gender, facebookName,birth;
     ProfilePictureView profilePictureView;
     LoginButton loginButton;
+    ImageView like;
+    EditText likesAmount;
+   int check = 0;
+    Integer likeInt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +71,31 @@ public class test_FB extends AppCompatActivity {
         profilePictureView = (ProfilePictureView) findViewById(R.id.photo1);
         email = (TextView) findViewById(R.id.email);
         fbShareButton = (ShareButton) findViewById(R.id.fb_share_button);
-       loginButton = (LoginButton) findViewById(R.id.login_button);
+         loginButton = (LoginButton) findViewById(R.id.login_button);
+       like = (ImageButton) findViewById(R.id.like);
+       likesAmount= (EditText) findViewById(R.id.likesAmount);
         share();
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
         callbackManager = CallbackManager.Factory.create();
 
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(check == 0){
+               like.setBackgroundColor(Color.RED);
+               likeInt++;
+              check++;
+                }
+                else{
+                   like.setBackgroundColor(Color.WHITE);
+                    likeInt--;
+                   check--;
+                }
+               String str = likeInt.toString();
+                likesAmount.setText(str);
+            }
+        });
         // Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
