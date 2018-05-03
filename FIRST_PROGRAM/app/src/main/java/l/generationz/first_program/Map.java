@@ -1,5 +1,9 @@
 package l.generationz.first_program;
 
+import android.content.Intent;
+import android.location.Location;
+import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -13,11 +17,20 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class Map extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private GPSTracker gpsTracker;
+    private Location mLocation;
+    double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        gpsTracker = new GPSTracker(getApplicationContext());
+        mLocation = gpsTracker.getLocation();
+
+        latitude = mLocation.getLatitude();
+        longitude = mLocation.getLongitude();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -43,6 +56,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
        LatLng Opera = new LatLng(49.8440167,24.0240236);
         LatLng Gid = new LatLng(49.841133,24.034515);
         LatLng Hight = new LatLng(49.848224699999996,24.039509503704835);
+        LatLng Location = new LatLng(latitude,longitude);
+        mMap.addMarker(new MarkerOptions().position(Location).title("Ваше місцезнаходження"));
         mMap.addMarker(new MarkerOptions().position(Hight).title("Найвища точка міста"));
         mMap.addMarker(new MarkerOptions().position(Gid).title("Жидівська кнайпа"));
       //  mMap.addMarker(new MarkerOptions().position(Opera).title("Сидяча статуя С"));
