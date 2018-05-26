@@ -17,6 +17,7 @@ public class menu extends AppCompatActivity {
 
         ImageButton qusets=(ImageButton) findViewById(R.id.quests);
         ImageButton map=(ImageButton) findViewById(R.id.map2);
+        ImageButton user=(ImageButton) findViewById(R.id.user);
 
         ImageButton feed = (ImageButton) findViewById(R.id.feed);
 
@@ -24,6 +25,12 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(menu.this,Map.class));
+            }
+        });
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(menu.this,UserActivity.class));
             }
         });
         qusets.setOnClickListener(new View.OnClickListener() {

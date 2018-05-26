@@ -63,8 +63,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogInFB" />
-        <activity android:name=".MenuQuestsActivity"></activity>
+        <activity android:name=".MenuQuestsActivity" />
         <activity android:name=".Feed" />
+        <activity android:name=".UserActivity" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
