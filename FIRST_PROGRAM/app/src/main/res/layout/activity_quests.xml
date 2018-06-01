@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="l.generationz.first_program.QuestsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/a81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/quest_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="TextView"
+            android:textColor="#ffffff"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="208dp" />
+
+
+        <TextView
+            android:id="@+id/quest_description"
+            android:layout_width="190dp"
+            android:layout_height="211dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="78dp"
+            android:text="TextView"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/map2"
+            android:layout_width="70dp"
+            android:layout_height="62dp"
+            android:background="@android:color/transparent"
+            android:layout_alignBottom="@+id/btnCamera"
+            android:layout_alignStart="@+id/imageView11"
+            app:srcCompat="@drawable/mapd" />
+
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="224dp"
+            android:layout_height="73dp"
+            android:layout_alignBottom="@+id/imageView11"
+            android:layout_alignStart="@+id/quest_task"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/img_chek" />
+
+        <ImageView
+            android:id="@+id/quest_image"
+            android:layout_width="160dp"
+            android:layout_height="181dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="69dp" />
+
+        <TextView
+            android:id="@+id/quest_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageView17"
+            android:layout_marginBottom="179dp"
+            android:text="TextView"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="17dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/mapd" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/map2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="11dp"
+            app:srcCompat="@drawable/mitka" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

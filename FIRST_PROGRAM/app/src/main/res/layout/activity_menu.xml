@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a81"
+    tools:context="l.generationz.first_program.menu">
+
+
+    <Button
+        android:id="@+id/map2Btn"
+        android:layout_width="308dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="288dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mapa" />
+
+    <Button
+        android:id="@+id/feedBtn"
+        android:layout_width="290dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map2"
+        app:srcCompat="@drawable/feed" />
+
+    <Button
+        android:id="@+id/questsBtn"
+        android:layout_width="356dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="144dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quests" />
+
+    <Button
+        android:id="@+id/userBtn"
+        android:layout_width="316dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="335dp"
+        android:layout_height="139dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/questsBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/quests"
+        android:layout_width="335dp"
+        android:layout_height="139dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quests" />
+
+    <ImageView
+        android:id="@+id/map2"
+        android:layout_width="335dp"
+        android:layout_height="139dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="304dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mapa" />
+
+    <ImageView
+        android:id="@+id/feed"
+        android:layout_width="335dp"
+        android:layout_height="139dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="448dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/feed" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="318dp" />
+
+
+</android.support.constraint.ConstraintLayout>
+
+
